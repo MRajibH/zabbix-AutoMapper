@@ -4,9 +4,9 @@ import random
 from zabbix_utils import ZabbixAPI
 
 # Zabbix server details
-zabbix_url = "https://xxxxxxxxxxxxxxxxxx/"
+zabbix_url = "http://192.168.31.9:8080/"
 api = ZabbixAPI(url=zabbix_url)
-api.login(token="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+api.login(token="cd5480fb1ab2b07379a87fa96d12acd676935d93f15d6c9d5baa2b8ca54b0c38")
 
 
 def create_host_group(host_group_name):
@@ -22,7 +22,7 @@ def create_host(host_name, type="server", link="", host_group="",ip="",link_labe
         "host": host_name,
                 "templates": [
             {
-                "templateid": "11267"
+                "templateid": "10343"
             }
         ],
         "interfaces": [
@@ -82,8 +82,8 @@ def delete_hosts_from_host_group(hostgroup_id):
     return True
 
 
-host_group_id = 38
-delete_hosts_from_host_group(host_group_id)
+host_group_id = 22
+#delete_hosts_from_host_group(host_group_id)
 
 for i in range(1, 41):
     host_type = "server"
